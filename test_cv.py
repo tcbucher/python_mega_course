@@ -22,3 +22,17 @@ im_g[0:2,2:4] # This is how you slice an MDA
 # in order from the top left to the bottom right
 for i in im_g.flat:
     print(i)
+
+# concatenating numpy arrays horizontally uses the numpy.hstack() function
+# note that it needs to be passed a tuple that contains the arrays to be stacked
+# below, I've stacked an array with itself
+im_s = numpy.hstack((im_g, im_g))
+print(im_s)
+# stacking vertically uses the vstack() method
+# if the arrays have different dimensions, it will throw an exception
+
+# Conversely, splitting a numpy array uses the .hsplit() and .vsplit() methods
+# These methods take two arguments, an array to split and an integer telling it how many arrays to split it into
+# If the number of split arrays does not divide into the dimensions of the original, it will throw an exception
+im_sp = numpy.hsplit(im_s, 2)
+print(im_sp)
