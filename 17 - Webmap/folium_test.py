@@ -11,6 +11,7 @@ WPAmap = folium.Map(location=ftown_coords, zoom_start=10, tiles='Stamen Terrain'
 # You can add points to the map using the Marker and CircleMarker methods
 # location: a list or tuple of lat (-90 to 90) and long (-180 to 180).  values are northing, easting
 # popup: some text to show when the user clicks the point on the map
+#   You can also use a folium iframe object for this to incorporate HTML
 # icon: an icon to be displayed at the marker.  By default, shows a blue point balloon with a white dot
 ftown_icon = folium.Icon(color='green')
 ftown_marker = folium.Marker(location=ftown_coords, popup="Fredericktown", icon=ftown_icon)
