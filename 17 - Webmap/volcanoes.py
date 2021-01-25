@@ -10,7 +10,7 @@ elevations = list(volc_data['ELEV'])
 
 feat_group = folium.FeatureGroup(name='volcanoes')
 
-def getMarkerColor(elev):
+def get_marker_color(elev):
     if elev <= 1000:
         marker_color = '#00FF00'
     elif elev <= 3000:
@@ -22,7 +22,7 @@ def getMarkerColor(elev):
 for x, y, name, el in zip(lat, lon, names, elevations):
     msg = f'{name}\n{el}'
 
-    feat_group.add_child(folium.CircleMarker(location=(x,y), popup=msg, radius=7, fill=True, color='#777777', fill_color=getMarkerColor(el), opacity=0.6, fill_opacity=0.6))
+    feat_group.add_child(folium.CircleMarker(location=(x,y), popup=msg, radius=7, fill=True, color='#777777', fill_color=get_marker_color(el), opacity=0.6, fill_opacity=0.6))
 
 map_us = folium.Map(location=(38,-96), zoom_start=5)
 map_us.add_child(feat_group)
